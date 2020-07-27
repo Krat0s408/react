@@ -2,12 +2,6 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Line } from "react-chartjs-2";
 
-const styles = theme => ({
-  "chart-container": {
-    height: 600
-  }
-});
-
 class App extends React.Component {
   state = {
     lineChartData: {
@@ -83,9 +77,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
     return (
-      <div className={classes["chart-container"]}>
+      <div style={{height:"600px"}}>
         <Line
           data={this.state.lineChartData}
           options={this.state.lineChartOptions}
@@ -95,4 +88,4 @@ class App extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(App);
+export default App;
